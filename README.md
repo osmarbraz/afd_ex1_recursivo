@@ -11,4 +11,4 @@ A1 = <{a, b} , { s0, s1, s2}, s0, δ, {s2}>, onde δ é:
 δ{s1,a) = s2
 
 AFD:
-![AFD imagem](/assets/images/afdex1.png)
+![AFD imagem](https://github.com/osmarbraz/afd_ex1_recursivo/blob/master/afdex1.png)
