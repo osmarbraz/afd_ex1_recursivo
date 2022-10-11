@@ -6,7 +6,7 @@ public class Principal {
     //Armazena o estado inicial
     static int estado_inicial = 0;
     //Armazena o estado final
-    static int estado_final = 2;
+    static int estado_final = 3;
     //Armazena o estado atual
     static int estado_atual = estado_inicial;
     //Armazena o estado próximo
@@ -40,6 +40,13 @@ public class Principal {
 
             avaliaEstado1(entrada);
         }
+         // Estado 0 para 1
+        if (avaliar == 'b') {
+            //Guarda o próximo estado
+            estado_proximo = 1;
+
+            avaliaEstado1(entrada);
+        }
     }
 
     // Estado 1
@@ -49,35 +56,69 @@ public class Principal {
         //Recupera um caracter
         char avaliar = proximoCaracter(entrada);
 
-        // Estado 1 para 1
+        // Estado 1 para 2
+        if (avaliar == 'a') {
+            //Guarda o próximo estado
+            estado_proximo = 2;
+
+            avaliaEstado2(entrada);
+        }
+        
+        // Estado 1 para 2
         if (avaliar == 'b') {
             //Guarda o próximo estado
-            estado_proximo = 1;
+            estado_proximo = 2;
 
-            avaliaEstado1(entrada);
+            avaliaEstado2(entrada);
         }
 
-        // Estado 1 para 2
+      
+    }
+    
+    // Estado 1
+    public static void avaliaEstado2(String entrada) {
+        //Atualiza o estado atual
+        estado_atual = estado_proximo;
+        //Recupera um caracter
+        char avaliar = proximoCaracter(entrada);
+
+        // Estado 2 para 3
         if (avaliar == 'a') {
             //Se chegou no final da entrada
             if (i == entrada.length()) {
                 //Guarda o próximo estado
-                estado_proximo = 2;
+                estado_proximo = 3;
 
                 avaliaEstado2(entrada);
             } else {
                 estado_proximo = -1;
             }
         }
+        
+        // Estado 2 para 3
+        if (avaliar == 'a') {
+            //Se chegou no final da entrada
+            if (i == entrada.length()) {
+                //Guarda o próximo estado
+                estado_proximo = 3;
+
+                avaliaEstado2(entrada);
+            } else {
+                estado_proximo = -1;
+            }
+        }
+      
     }
 
     // Estado 2 (Estado final)
-    public static void avaliaEstado2(String entrada) {
+    public static void avaliaEstado3(String entrada) {
         //Atualiza o estado atual
         estado_atual = estado_proximo;
     }
 
     public static void main(String args[]) {
+        
+        System.out.println("\nImplementacao recursiva:\n");
         
         String entrada = "";
         if (args.length != 0) {
@@ -91,9 +132,9 @@ public class Principal {
 
         //Verifica se o estado atual é igual ao estado final
         if (estado_atual == estado_final) {
-            System.out.println("\nEntrada valida   :" + entrada);
+            System.out.println("Entrada valida   :" + entrada);
         } else {
-            System.out.println("\nEntrada invalida :" + entrada);
+            System.out.println("Entrada invalida :" + entrada);
         }
     }
 }
