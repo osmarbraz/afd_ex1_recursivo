@@ -75,7 +75,7 @@ public class Principal {
       
     }
     
-    // Estado 1
+    // Estado 2
     public static void avaliaEstado2(String entrada) {
         //Atualiza o estado atual
         estado_atual = estado_proximo;
@@ -96,7 +96,7 @@ public class Principal {
         }
         
         // Estado 2 para 3
-        if (avaliar == 'a') {
+        if (avaliar == 'b') {
             //Se chegou no final da entrada
             if (i == entrada.length()) {
                 //Guarda o próximo estado
@@ -106,8 +106,7 @@ public class Principal {
             } else {
                 estado_proximo = -1;
             }
-        }
-      
+        }      
     }
 
     // Estado 2 (Estado final)
