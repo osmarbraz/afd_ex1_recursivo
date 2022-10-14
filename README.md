@@ -1,6 +1,6 @@
 # AFD Exercício 1
 
-Implementação java recursivo de um AFD A1, que reconhece a linguagem:
+Implementação java recursivo de um Autômato Finito Determinístico(AFD) que reconhece a linguagem:
 
 L = {w &isin; {a,b}* | w possui tamanho 3}
 - Ex.: aba, aaa, bbb, bbb, .... 
